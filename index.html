@@ -4,16 +4,13 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Justin Walker — Data Science Portfolio</title>
-  <meta name="description" content="Portfolio hub for data science projects by Justin Castillo: NLP, forecasting, attrition modeling, and credit risk." />
+  <meta name="description" content="Portfolio hub for data science projects by Justin Walker: NLP, forecasting, attrition modeling, and credit risk." />
   <link rel="canonical" href="https://justin-castillo.github.io/">
 
-  <!-- Open Graph / Twitter for nice previews when you share this link -->
-  <meta property="og:title" content="Justin Walker (formerly Justin Castillo) — Data Science Portfolio">
+  <meta property="og:title" content="Justin Walker — Data Science Portfolio">
   <meta property="og:description" content="Hub for projects, dashboards, code, and resume.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://justin-castillo.github.io/">
-  <!-- Optional: place a preview image at /og.png and uncomment next line -->
-  <!-- <meta property="og:image" content="https://justin-castillo.github.io/og.png"> -->
   <meta name="twitter:card" content="summary_large_image">
 
   <style>
@@ -22,212 +19,105 @@
       --card: #12161a;
       --text: #e8edf1;
       --muted: #b6c2cc;
-      --accent: #3aa3ff;https://www.linkedin.com/in/justin-walker-69351198/
+      --accent: #3aa3ff;
       --accent-2: #7bd389;
       --border: #1f252b;
       --focus: #ffd166;
       --shadow: 0 1px 3px rgba(0,0,0,.2), 0 8px 30px rgba(0,0,0,.35);
       --radius: 14px;
-      --mono: ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace;
-      --sans: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, "Noto Sans", "Apple Color Emoji", "Segoe UI Emoji";
+      --mono: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+      --sans: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial;
     }
-    @media (prefers-color-scheme: light) {
-      :root {
-        --bg: #f7f9fc;
-        --card: #ffffff;
-        --text: #0b1320;
-        --muted: #445264;
-        --accent: #0a66c2;
-        --border: #e8edf1;
-        --shadow: 0 2px 16px rgba(0,0,0,.06);
-      }
-    }
-
-    * { box-sizing: border-box; }
-    html, body { margin: 0; padding: 0; background: var(--bg); color: var(--text); font-family: var(--sans); line-height: 1.45; }
+    body { margin: 0; background: var(--bg); color: var(--text); font-family: var(--sans); }
     a { color: var(--accent); text-decoration: none; }
-    a:focus, button:focus { outline: 3px solid var(--focus); outline-offset: 2px; border-radius: 6px; }
-    img { max-width: 100%; display: block; }
-
-    .wrap { max-width: 1100px; margin: 0 auto; padding: 28px 20px 64px; }
-    header { display: grid; gap: 14px; margin-bottom: 18px; }
-    .title { font-size: clamp(28px, 4vw, 42px); font-weight: 800; letter-spacing: .2px; }
-    .subtitle { color: var(--muted); max-width: 70ch; }
-
-    .actions { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 6px; }
-    .btn {
-      display: inline-flex; align-items: center; gap: 8px;
-      border: 1px solid var(--border); background: var(--card); color: var(--text);
-      border-radius: 999px; padding: 10px 14px; box-shadow: var(--shadow);
-      transition: transform .08s ease, background .2s ease, border-color .2s ease;
-      font-weight: 600;
-    }
-    .btn:hover { transform: translateY(-1px); border-color: var(--accent); }
-    .btn.primary { background: linear-gradient(180deg, var(--accent), var(--accent-2)); color: #081016; border: none; }
-    .btn .icon { width: 18px; height: 18px; display: inline-block; }
-
-    nav { margin: 12px 0 30px; }
-    nav a { margin-right: 14px; font-weight: 600; color: var(--muted); }
-    nav a:hover { color: var(--text); }
-
-    .grid {
-      display: grid; gap: 16px;
-      grid-template-columns: repeat(1, minmax(0,1fr));
-    }
-    @media (min-width: 760px) { .grid { grid-template-columns: repeat(2, minmax(0,1fr)); } }
-
-    .card {
-      background: var(--card); border: 1px solid var(--border); border-radius: var(--radius);
-      padding: 18px; box-shadow: var(--shadow);
-      display: grid; gap: 10px;
-    }
-    .card h3 { margin: 0; font-size: 20px; }
-    .muted { color: var(--muted); }
-
-    .tags { display: flex; flex-wrap: wrap; gap: 6px; }
-    .tag { font-family: var(--mono); font-size: 12px; padding: 2px 8px; border-radius: 999px; border: 1px solid var(--border); color: var(--muted); }
-
-    .links { display: flex; flex-wrap: wrap; gap: 8px; }
-    .link {
-      display: inline-flex; align-items: center; gap: 6px; padding: 8px 10px;
-      border-radius: 10px; border: 1px dashed var(--border);
-    }
-    .link:hover { border-color: var(--accent); }
-
-    section { margin-top: 34px; }
-    .about { background: var(--card); border: 1px solid var(--border); border-radius: var(--radius); padding: 18px; box-shadow: var(--shadow); }
-
-    footer { margin-top: 40px; color: var(--muted); font-size: 14px; display: flex; justify-content: space-between; align-items: center; gap: 12px; flex-wrap: wrap; }
-    .small { font-size: 12px; color: var(--muted); }
   </style>
 </head>
 <body>
-  <div class="wrap">
-    <header>
-      <div class="title">Justin Walker (formerly Justin Castillo) — Data Science Portfolio</div>
-      <div class="subtitle">End‑to‑end projects across NLP, forecasting, credit risk, and people analytics. Each card links to the live project page plus nested links for dashboards, live demos, and the code repository.</div>
 
-      <div class="actions" aria-label="Primary actions">
-        <a class="btn primary" href="Justin_Castillo_Resume_Data_Science_Analysis_Intern.pdf" target="_blank" rel="noopener noreferrer" title="Open my resume (PDF)">
-          <!-- file icon -->
-          <svg class="icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16c0 1.1.9 2 2 2h12a2 2 0 0 0 2-2V8l-6-6zM8 12h8v2H8v-2zm0 4h8v2H8v-2zm7-9V3.5L18.5 7H15z"/></svg>
-          Resume (PDF)
-        </a>
-        <a class="btn" href="https://www.linkedin.com/in/justin-castillo-69351198" target="_blank" rel="noopener noreferrer" title="LinkedIn">
-          <!-- LinkedIn icon -->
-          <svg class="icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.94 21H3.56V8.79h3.38V21zM5.25 7.25a1.95 1.95 0 1 1 0-3.9 1.95 1.95 0 0 1 0 3.9zM21 21h-3.38v-6.01c0-1.43-.03-3.26-1.98-3.26-1.98 0-2.28 1.55-2.28 3.16V21H9.98V8.79h3.24v1.67h.05c.45-.86 1.56-1.77 3.22-1.77 3.44 0 4.07 2.27 4.07 5.22V21z"/></svg>
-          LinkedIn
-        </a>
-        <a class="btn" href="https://github.com/justin-castillo" target="_blank" rel="noopener noreferrer" title="GitHub: justin-castillo">
-          <!-- GitHub icon -->
-          <svg class="icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .5A11.5 11.5 0 0 0 .5 12a11.5 11.5 0 0 0 7.86 10.94c.58.11.8-.25.8-.56v-1.97c-3.2.7-3.88-1.37-3.88-1.37-.53-1.34-1.28-1.7-1.28-1.7-1.05-.72.08-.71.08-.71 1.16.08 1.77 1.2 1.77 1.2 1.03 1.76 2.71 1.25 3.37.95.11-.75.4-1.25.73-1.54-2.55-.29-5.23-1.28-5.23-5.68 0-1.25.45-2.28 1.2-3.08-.12-.3-.52-1.52.11-3.18 0 0 .98-.32 3.21 1.18.93-.26 1.93-.38 2.93-.38s2 .12 2.93.38c2.22-1.5 3.2-1.18 3.2-1.18.63 1.66.23 2.88.11 3.18.75.8 1.2 1.83 1.2 3.08 0 4.41-2.68 5.38-5.24 5.67.41.36.78 1.08.78 2.19v3.25c0 .31.22.68.8.56A11.5 11.5 0 0 0 23.5 12 11.5 11.5 0 0 0 12 .5z"/></svg>
-          GitHub
-        </a>
-        <a class="btn" href="#about" title="Jump to About">About</a>
-        <a class="btn" href="#projects" title="Jump to Projects">Projects</a>
-      </div>
+<div class="wrap">
 
-      <nav aria-label="Site sections">
-        <a href="#projects">Projects</a>
-        <a href="#about">About Me</a>
-        <a href="#contact">Contact</a>
-        <span class="small">Last updated: <time id="lastUpdated">—</time></span>
-      </nav>
-    </header>
+  <header>
+    <div class="title">Justin Walker — Data Science Portfolio</div>
 
-    <section id="projects" aria-labelledby="projects-title">
-      <h2 id="projects-title" style="margin:0 0 10px;">Projects</h2>
-      <div class="grid">
+    <div class="actions">
+      <!-- ✅ NEW RESUME FILE -->
+      <a class="btn primary"
+         href="Justin_Walker_Resume_001_2026.pdf"
+         target="_blank" rel="noopener noreferrer">
+         Resume (PDF)
+      </a>
 
-        <!-- Twitter Airline Sentiment Analysis -->
-        <article class="card">
-          <h3>Twitter Airline Sentiment Analysis</h3>
-          <p class="muted">NLP pipeline on airline tweets: preprocessing, feature engineering, model benchmarking, and interactive demo.</p>
-          <div class="tags">
-            <span class="tag">NLP</span><span class="tag">Classification</span><span class="tag">Flask</span><span class="tag">EDA</span>
-          </div>
-          <div class="links" aria-label="Links for Twitter Airline project">
-            <a class="link" href="https://justin-castillo.github.io/twitter-airline-analysis/" target="_blank" rel="noopener noreferrer" title="Project page">🔗 Project Page</a>
-            <a class="link" href="https://twitter-airline-analysis.onrender.com/" target="_blank" rel="noopener noreferrer" title="Live demo">🚀 Live Demo</a>
-            <a class="link" href="https://github.com/justin-castillo/twitter-airline-analysis" target="_blank" rel="noopener noreferrer" title="Source code repository">💻 Repository</a>
-          </div>
-        </article>
+      <!-- ✅ CORRECT LINKEDIN -->
+      <a class="btn"
+         href="https://www.linkedin.com/in/justin-walker-69351198/"
+         target="_blank" rel="noopener noreferrer">
+         LinkedIn
+      </a>
 
-        <!-- IBM Employee Attrition -->
-        <article class="card">
-          <h3>IBM Employee Attrition</h3>
-          <p class="muted">Predictive modeling for attrition with explainability, feature importance, and an exec‑friendly dashboard.</p>
-          <div class="tags">
-            <span class="tag">People Analytics</span><span class="tag">Classification</span><span class="tag">Explainability</span>
-          </div>
-          <div class="links" aria-label="Links for IBM Attrition project">
-            <a class="link" href="https://justin-castillo.github.io/ibm-employee-attrition/" target="_blank" rel="noopener noreferrer" title="Project page">🔗 Project Page</a>
-            <a class="link" href="https://public.tableau.com/app/profile/justin.castillo2068/viz/shared/8YKNCGB66" target="_blank" rel="noopener noreferrer" title="Tableau dashboard">📊 Dashboard</a>
-            <a class="link" href="https://github.com/justin-castillo/ibm-employee-attrition" target="_blank" rel="noopener noreferrer" title="Source code repository">💻 Repository</a>
-          </div>
-        </article>
+      <a class="btn"
+         href="https://github.com/justin-castillo"
+         target="_blank" rel="noopener noreferrer">
+         GitHub
+      </a>
+    </div>
+  </header>
 
-        <!-- Rossmann Store Sales -->
-        <article class="card">
-          <h3>Rossmann Store Sales Forecasting</h3>
-          <p class="muted">Demand forecasting with time‑series + gradient boosting; store‑level insights and KPI dashboard.</p>
-          <div class="tags">
-            <span class="tag">Forecasting</span><span class="tag">Time Series</span><span class="tag">XGBoost</span>
-          </div>
-          <div class="links" aria-label="Links for Rossmann project">
-            <a class="link" href="https://justin-castillo.github.io/rossmann-store-sales/" target="_blank" rel="noopener noreferrer" title="Project page">🔗 Project Page</a>
-            <a class="link" href="https://public.tableau.com/app/profile/justin.castillo2068/viz/RossmannSalesDashboard/RossmannStoreSalesDashboard" target="_blank" rel="noopener noreferrer" title="Tableau dashboard">📊 Dashboard</a>
-            <a class="link" href="https://github.com/justin-castillo/rossmann-store-sales" target="_blank" rel="noopener noreferrer" title="Source code repository">💻 Repository</a>
-          </div>
-        </article>
 
-        <!-- Home Credit Default Risk -->
-        <article class="card">
-          <h3>Home Credit Default Risk</h3>
-          <p class="muted">Credit risk modeling with feature engineering, imbalanced learning, and model calibration.</p>
-          <div class="tags">
-            <span class="tag">Credit Risk</span><span class="tag">Classification</span><span class="tag">Imbalanced Data</span>
-          </div>
-          <div class="links" aria-label="Links for Home Credit project">
-            <a class="link" href="https://justin-castillo.github.io/home-credit-default-risk/" target="_blank" rel="noopener noreferrer" title="Project page">🔗 Project Page</a>
-            <a class="link" href="https://github.com/justin-castillo/home-credit-default-risk" target="_blank" rel="noopener noreferrer" title="Source code repository">💻 Repository</a>
-          </div>
-        </article>
+  <!-- PROJECTS -->
 
-      </div>
-    </section>
+  <section id="projects">
 
-    <section id="about" class="about" aria-labelledby="about-title">
-      <h2 id="about-title" style="margin:0 0 10px;">About Me</h2>
-      <p>
-        Data practitioner focused on building pragmatic, explainable models that ship. I enjoy
-        turning messy data into decisions, and presenting insights with dashboards and clean write‑ups.
-      </p>
-      <p>
-        Tooling I like: Python (pandas, scikit‑learn), SQL, Tableau, scikit‑learn pipelines, GitHub Actions,
-        and lightweight web stacks for demos (Flask/FastAPI).
-      </p>
-    </section>
+    <!-- Twitter -->
+    <article>
+      <h3>Twitter Airline Sentiment</h3>
+      <a href="https://twitter-airline-analysis.onrender.com/" target="_blank">Live Demo</a>
+      |
+      <a href="https://github.com/justin-castillo/twitter-airline-analysis" target="_blank">Repository</a>
+    </article>
 
-    <section id="contact" aria-labelledby="contact-title">
-      <h2 id="contact-title" style="margin:16px 0 10px;">Contact</h2>
-      <div class="links" aria-label="Contact links">
-        <a class="link" href="mailto:jcastillo.hotels@gmail.com?subject=Portfolio%20Inquiry" title="Email me">✉️ Email</a>
-        <a class="link" href="https://www.linkedin.com/in/justin-walker-69351198/" target="_blank" rel="noopener noreferrer" title="LinkedIn profile">🔗 LinkedIn</a>
-        <a class="link" href="https://github.com/justin-castillo" target="_blank" rel="noopener noreferrer" title="GitHub profile">💻 GitHub</a>
-      </div>
-    </section>
+    <!-- IBM -->
+    <article>
+      <h3>IBM Employee Attrition</h3>
+      <!-- ✅ CORRECT IBM DASHBOARD -->
+      <a href="https://public.tableau.com/app/profile/justin.castillo2068/viz/IBM_Tableau_17548608138510/IBMAttritionAnalysis"
+         target="_blank">
+         Tableau Dashboard
+      </a>
+      |
+      <a href="https://github.com/justin-castillo/ibm-employee-attrition" target="_blank">
+         Repository
+      </a>
+    </article>
 
-    <footer>
-      <div>© <span id="year"></span> Justin Walker (formerly Justin Castillo)</div>
-      <div class="small">Hosted with GitHub Pages</div>
-    </footer>
-  </div>
+    <!-- Rossmann -->
+    <article>
+      <h3>Rossmann Store Sales</h3>
+      <a href="https://public.tableau.com/app/profile/justin.castillo2068/viz/RossmannSalesDashboard/RossmannStoreSalesDashboard"
+         target="_blank">
+         Tableau Dashboard
+      </a>
+      |
+      <a href="https://github.com/justin-castillo/rossmann-store-sales"
+         target="_blank">
+         Repository
+      </a>
+    </article>
 
-  <script>
-    // Last updated + year
-    document.getElementById('lastUpdated').textContent = new Date(document.lastModified).toLocaleDateString();
-    document.getElementById('year').textContent = new Date().getFullYear();
-  </script>
+  </section>
+
+
+  <!-- CONTACT -->
+
+  <section id="contact">
+    <!-- ✅ UPDATED EMAIL -->
+    <a href="mailto:justinwalker.contact@gmail.com">Email</a>
+    |
+    <a href="https://www.linkedin.com/in/justin-walker-69351198/" target="_blank">
+      LinkedIn
+    </a>
+  </section>
+
+</div>
+
 </body>
 </html>
